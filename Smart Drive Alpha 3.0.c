@@ -24,14 +24,15 @@ task main()
   wait1Msec(1000);
 
 
-	while(abs(SensorValue[Gyro]) < angle)
+	while(abs(SensorValue[Gyro]) < angle*10)
   {
-    motor[X1] = 25;
+    motor[X1] = 40;
   }
-  motor[X1] = 0;
+  motor[X1] = -5;
 
   while(SensorValue[X1Encoder] < dist)
 	{
-
+		motor[Y1] = -speed;
+		motor[Y2] = -speed;
 	}
 }
